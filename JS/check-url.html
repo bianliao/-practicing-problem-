@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let s = prompt('請輸入 URL', '');
+        // 將輸入值轉成小寫，並判斷前面
+        //String.prototype.toLowerCase()
+        //String.prototype.startsWith()
+        function checkHTTPS(s){
+            return s.toLowerCase().startsWith('https://');
+        };
+        console.log(checkHTTPS(s));
+
+        //submit
+        // function checkHTTPS(s){
+        //     return s.toLowerCase().startsWith('https://');
+        // };
+        // console.log(checkHTTPS('https://test.com/'));
+        // console.log(checkHTTPS('https:test.com'));
+        // console.log(checkHTTPS('https:HTTPs://test.com/'));
+    </script>
+</body>
+</html>
