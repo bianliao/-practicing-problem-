@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function findLCM(n1, n2){
+            function findGCD(n1, n2){
+            if (n2 === 0) {
+                return n1;
+            }
+            return findGCD(n2, n1 % n2); //遞迴運算
+            }
+            return Math.abs(n1 * n2) / findGCD(n1, n2)
+        }
+
+        console.log(findLCM(6, 4));
+        console.log(findLCM(5, 16));
+        console.log(findLCM(12, 6));
+    </script>
+</body>
+</html>

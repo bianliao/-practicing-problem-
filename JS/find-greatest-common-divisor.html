@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //找到最大公因數
+        //輸入兩個正整數，你的函式能找到並回傳這兩個正整數的最大公因數。
+        
+        // 回傳餘數與找公因數的不同在於找公因數是遞迴運算
+        //function findRemainder(a, b) {return a % b; }
+        function findGCD(n1, n2){
+            if (n2 === 0) {
+                return n1;
+            }
+            return findGCD(n2, n1 % n2); //遞迴運算
+        }
+
+        console.log(findGCD(6, 4));
+        console.log(findGCD(5, 16));
+        console.log(findGCD(12, 16));
+    </script>
+</body>
+</html>
