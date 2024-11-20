@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //找到第二大的整數
+        //輸入包含至少兩個不同整數的陣列 / 列表，找到並回傳其中第二大的整數。
+
+        //Array.prototype.indexOf('要找的值', fromIndex); 
+        //https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+        //在陣列中找到的第一個元素索引值；沒找到則為 -1。
+        
+        //Array.prototype.splice(); 
+        //https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+        //var myFish = ["angel", "clown", "mandarin", "sturgeon"];
+        //var removed = myFish.splice(2, 0, "drum"); 索引 2 的位置開始，刪除 0 個元素並插入「drum」
+            // myFish 為 ["angel", "clown", "drum", "mandarin", "sturgeon"]
+        //var removed = myFish.splice(3, 1); 從索引 3 的位置開始，刪除 1 個元素
+            // myFish 為 ["angel", "clown", "drum", "sturgeon"]
+        //var removed = myFish.splice(2, 1, "trumpet"); 從索引 2 的位置開始，刪除 1 個元素並插入「trumpet」
+            // myFish 為 ["angel", "clown", "trumpet", "sturgeon"]
+        //var removed = myFish.splice(myFish.length - 3, 2); 從索引 2 的位置開始，刪除 2 個元素
+            // myFish 為 ["parrot", "anemone", "sturgeon"]
+        //var removed = myFish.splice(-2, 1); 從索引 -2 的位置開始，刪除 1 個元素
+            // myFish 為 ["angel", "clown", "sturgeon"]
+        //var removed = myFish.splice(2); 從索引 2 的位置開始，刪除所有元素（含索引 2）
+            // myFish 為 ["angel", "clown"]
+
+        //Array.prototype.filter()
+        //https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+
+
+        function removeMaxValue(nums) {
+            // 找到最大值
+            const maxValue = Math.max(...nums);
+            // 找到最大值的索引
+            //const maxIndex = nums.indexOf(maxValue);
+            // 移除最大值
+            // if (maxIndex !== -1) {
+            //     nums.splice(maxIndex, 1); // splice(索引, 刪除的個數)
+            // }
+            //移除所有最大值
+            const filteredNums = nums.filter((num) => num !== maxValue);
+            return Math.max(...filteredNums);
+        }   
+
+        console.log(removeMaxValue([1, 3, 3, 2, 5, -2]));
+        console.log(removeMaxValue([-5, -10, -8, 1, -1]));
+        console.log(removeMaxValue([0, 2]));
+
+        // 方法二
+        // Array.prototype.sort()
+        // https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+        // Set 物件可讓你儲存任何類型的唯一值（unique）
+
+        function findSecondMax(nums) {
+            // 移除重複值並排序
+            //let uniqueNums = [...new Set(nums)].sort((a, b) => b - a);
+            //return uniqueNums[1] || null;
+
+            const uniqueSet = new Set(nums) // > [object Set]
+            let uniqueNums = [...uniqueSet] //轉成 array
+            function compareNumbers(a, b) {
+                    return b - a;
+                }
+
+            const sortedNums = uniqueNums.sort(compareNumbers)
+            return sortedNums[1] || null
+        }
+        
+        console.log(findSecondMax([1, 3, 3, 2, 5, -2]));
+        console.log(findSecondMax([-5, -10, -8, 1, -1]));
+        console.log(findSecondMax([0, 2]));
+
+    </script>
+</body>
+</html>
