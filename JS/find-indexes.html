@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //找到目標數字所在的索引位置
+        function findIndexes(nums, target){
+            const indexes = [];
+            for(let i=0; i< nums.length; i++){
+                if(nums[i] === target){
+                    indexes.push(i);
+                }
+            } 
+            return indexes
+        }
+
+        console.log(findIndexes([3, 2, 1, 5, 10],'1'))
+        console.log(findIndexes([5, 2, 3],'4'))
+        console.log(findIndexes([-5, 2, -5, 1, -5],'-5'))
+
+    </script>
+</body>
+</html>
