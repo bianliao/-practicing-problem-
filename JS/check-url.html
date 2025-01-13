@@ -7,9 +7,13 @@
 </head>
 <body>
     <script>
+        //檢查字串是否以 https:// 開頭
+        //輸入一個字串，你的函式能檢查該字串是否以 https:// 開頭，不考慮大小寫。若是以 https:// 開頭，回傳真值，否則回傳假值。
+
         let s = prompt('請輸入 URL', '');
         // 將輸入值轉成小寫，並判斷前面
         //String.prototype.toLowerCase()
+        //https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
         //String.prototype.startsWith()
         function checkHTTPS(s){
             return s.toLowerCase().startsWith('https://');

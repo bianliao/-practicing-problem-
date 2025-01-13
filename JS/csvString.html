@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //將整數陣列 / 列表，轉換為逗號隔開的字串
+        //輸入一個整數陣列，你的函式能將其轉換為逗號隔開的單一字串。
+
+        //join()實例的方法 透過Array連接此數組中的所有元素（用逗號或指定的分隔符號字串分隔）來建立並傳回一個新字串。如果數組只有一項，則將傳回該項而不使用分隔符號。
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
+        function toCSVString(nums){
+            const csv = nums.join(',');
+            return csv;
+        }
+
+        console.log(toCSVString([3, 5, -4, 2]));
+        console.log(toCSVString([0]));
+        console.log(toCSVString([1000]));
+    </script>
+</body>
+</html>

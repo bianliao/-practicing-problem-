@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //輸入一個可能包含空字串的字串陣列 / 列表，以及一個預設值，你的函式能把陣列 / 列表中的空字串用預設值取代。
+        //JavaScript 本身沒有內建的 replace() 函式適用於陣列元素。 String.prototype.replace() 是針對字串的。
+        //條件 if(word == false) 會將任何「Falsy」的值（例如 ""、0、false、null、undefined、NaN）視為符合條件，但我們僅需檢查空字串 ("")。
+        
+        function fill(words, value) {
+            return words.map(word => (word === "" ? value : word));
+        }
+        
+        function fill(words, value){
+            
+            function withValue(){
+                if(words ===""){
+                    return value
+                }
+            }
+    
+            const fillWithValue = words.map(withValue)
+            return fillWithValue
+        }
+        
+
+        console.log(fill(["Hello", "World", ""],'test'));
+        console.log(fill(["", "ok", ""],'failed'));
+        console.log(fill(["no empty"],'word'));
+    </script>
+</body>
+</html>
