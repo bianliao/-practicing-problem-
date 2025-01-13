@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkMoney(n){
+            return n > 100 && n % 100 === 0 && n <= 100000;
+        };
+        // 原本的寫法是我去回傳 true or false ，應該要直讓程式去判斷
+        // function checkMoney(n){
+        //     if (n > 100 && n % 100 === 0 && n <= 100000 ){
+        //         return true
+        //     }else{
+        //         return false
+        //     }
+        // };
+
+        console.log(checkMoney(30));
+        console.log(checkMoney(2000));
+        console.log(checkMoney(6150));
+    </script>
+</body>
+</html>
